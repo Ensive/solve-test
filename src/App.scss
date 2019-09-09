@@ -1,0 +1,37 @@
+@import './node_modules/reset-css/sass/_reset.scss';
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  // background-color: #e7e1e1;
+}
+
+.Container {
+  width: 100%;
+  max-width: 1170px;
+  margin: 60px auto 0;
+  padding: 0 20px;
+}
+
+.Error {
+  color: #000;
+  background: lighten(red, 40%);
+  padding: 8px 12px;
+
+  &::before {
+    content: 'ℹ️';
+    line-height: 1;
+    vertical-align: -2px;
+  }
+}
+
+.Message {
+  padding: 8px 12px;
+}

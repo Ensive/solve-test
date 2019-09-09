@@ -1,14 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UserView = ({name, registered}) => {
+const UserView = ({name, dob}) => {
   return (
-    <div className="User">
-      {/*<span>{name.first}</span>*/}
-      {/*<span>{registered.age}</span>*/}
-      <p className="User__cell">{`${name.first} ${name.last}`}</p>
-      <p className="User__cell">{registered.date}</p>
-    </div>
+    <li className="User">
+      <span className="User__cell">{`${name.first} ${name.last}`}</span>
+      <span className="User__cell">{dob}</span>
+    </li>
   );
 };
 
