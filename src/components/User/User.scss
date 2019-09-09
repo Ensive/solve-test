@@ -48,3 +48,7 @@
   padding: 10px 15px;
   min-width: 200px;
 }
+
+.User__cell.User__cell--name {
+  text-transform: capitalize;
+}

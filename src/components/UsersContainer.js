@@ -33,7 +33,7 @@ class UsersContainer extends Component {
       });
   }
 
-  getUsersNameSortClass = sortedBy => {
+  getUsersLabelSortClass = sortedBy => {
     const isCurrentlySortedByName = this.state.sorted.field === sortedBy;
     const isSortedAsc = this.state.sorted.type === ASC;
     const isSortedDesc = this.state.sorted.type === DESC;
@@ -148,7 +148,9 @@ class UsersContainer extends Component {
     const users = this.state.users
       .filter(({ name }) => {
         const fullName = `${name.first} ${name.last}`;
-        return fullName.includes(this.state.nameFilter);
+        return fullName
+          .toLowerCase()
+          .includes(this.state.nameFilter.toLowerCase());
       })
       .map((user, index) => <UserView key={index} {...user} />);
 
@@ -161,7 +163,7 @@ class UsersContainer extends Component {
               <span
                 onClick={this.handleSortByName}
                 role="button"
-                className={this.getUsersNameSortClass('name')}
+                className={this.getUsersLabelSortClass('name')}
               >
                 Name
               </span>
@@ -170,7 +172,7 @@ class UsersContainer extends Component {
               <span
                 onClick={this.handleSortByBirthday}
                 role="button"
-                className={this.getUsersNameSortClass('birthday')}
+                className={this.getUsersLabelSortClass('birthday')}
               >
                 Date of birth
               </span>
