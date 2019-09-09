@@ -1,0 +1,19 @@
+.Container {
+  width: 100%;
+  max-width: 1170px;
+  margin: 60px auto;
+}
+
+.User {
+  display: flex;
+
+  &:nth-child(even) {
+    background-color: lightblue;
+  }
+}
+
+.User__cell {
+  display: block;
+  padding: 10px 15px;
+  min-width: 150px;
+}
